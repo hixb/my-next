@@ -9,14 +9,14 @@
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
     "next": "latest",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "remark": "^14.0.1",
     "remark-html": "^15.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
-    "@types/react": "^18.0.17",
+    "@types/react": "^18.0.18",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
     "@zeit/next-css": "^1.0.1",
