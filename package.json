@@ -22,7 +22,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "eslint": "^8.37.0",
-    "sass": "^1.60.0",
+    "sass": "^1.61.0",
     "typescript": "^5.0.3"
   }
 }
