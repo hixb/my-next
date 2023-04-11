@@ -18,7 +18,7 @@
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.34",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
+    "@typescript-eslint/parser": "^5.58.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "eslint": "^8.38.0",
