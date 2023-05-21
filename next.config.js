@@ -1,6 +1,8 @@
 const path = require("path");
 const withCSS = require("@zeit/next-css");
 const withSass = require("@zeit/next-sass");
+const UnoCSS = require("@unocss/webpack").default;
+const presetUno = require("@unocss/preset-uno").default;
 
 module.exports = withSass(
   withCSS({
@@ -33,7 +35,17 @@ const regexEqual = (x, y) =>
 module.exports = {
   optimizeFonts: false,
   reactStrictMode: true,
-  webpack(config) {
+  webpack(config, context) {
+    config.plugins.push(UnoCSS({ presets: [presetUno()] }));
+
+    if (context.buildId !== "development") {
+      // * disable filesystem cache for build
+      // * https://github.com/unocss/unocss/issues/419
+      // * https://webpack.js.org/configuration/cache/
+      config.cache = false;
+    }
+
+
     const sassRules = config.module.rules.find((rule) => typeof rule.oneOf === "object").oneOf.find((rule) =>
       rule.sideEffects === false &&
       regexEqual(rule.test, /\.module\.(scss|sass)$/)
