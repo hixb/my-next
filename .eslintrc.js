@@ -15,7 +15,8 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:unocss/recommended"
   ],
   rules: {
     semi: [2],

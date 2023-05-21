@@ -1,6 +1,5 @@
 import { getSortedPostsData } from "../lib/posts";
 import { GetStaticProps } from "next";
-import pageIndex from "../styles/pages/index.module.scss";
 
 export default function Home({ allPostsData }: {
   allPostsData: {
@@ -10,7 +9,7 @@ export default function Home({ allPostsData }: {
   }[]
 }) {
   return (
-    <div className={pageIndex.hello}>hello</div>
+    <div className={"color-red text-12px"}>hello</div>
   );
 }
 
