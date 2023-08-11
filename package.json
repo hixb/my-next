@@ -31,6 +31,6 @@
     "eslint-plugin-unocss": "0.0.1-alpha.3",
     "sass": "^1.62.1",
     "typescript": "^5.0.4",
-    "unocss": "^0.54.0"
+    "unocss": "^0.55.0"
   }
 }
