@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4321",
     "build": "next build",
     "start": "next start"
   },
@@ -19,16 +19,13 @@
     "remark-html": "^15.0.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.41.0",
     "@types/node": "^20.2.1",
     "@types/react": "^18.2.6",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@unocss/preset-uno": "^0.55.0",
-    "@unocss/webpack": "^0.55.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
-    "eslint": "^8.40.0",
-    "eslint-plugin-unocss": "0.0.1-alpha.3",
+    "eslint": "^8.48.0",
+    "eslint-plugin-react": "^7.33.2",
     "sass": "^1.62.1",
     "typescript": "^5.0.4",
     "unocss": "^0.55.0"
