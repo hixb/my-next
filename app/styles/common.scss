@@ -1,0 +1,18 @@
+body {
+  background-color: var(--my-bg-base-color);
+  color: var(--my-text-base-color);
+  transition: var(--my-theme-trans2);
+}
+
+.set-svg-stroke {
+  stroke: var(--my-special-color);
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+
+  * {
+    stroke: var(--my-svg-color);
+  }
+}

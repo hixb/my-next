@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: var(--my-bg-base-color);
-  color: var(--my-text-base-color);
-  transition: var(--my-theme-trans2);
-}
+@import "common";
 
 :root {
   --my-special-color: #482dff;
@@ -30,7 +26,7 @@ body {
   --my-theme-trans15: all 1.5s ease;
 }
 
-:root {
+[data-theme='light'] {
   --my-text-base-color: #343435;
   --my-fill-color: #ffffff;
   --my-str-color: #e6e6e6;
@@ -90,8 +86,4 @@ body {
   --my-darkT: #252526;
   --my-darkTa: #989b9f;
   --my-waveB: #343435;
-}
-
-.set-svg-stroke {
-  stroke: var(--my-special-color);
 }
