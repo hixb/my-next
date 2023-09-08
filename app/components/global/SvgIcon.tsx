@@ -1,8 +1,10 @@
-import Image from 'next/image'
+'use client'
+
 import classes from '@/app/styles/components/svgIcon.module.scss'
+import { isFunction } from '@/app/utils/useChecks'
 
 interface Props {
-  icon: string
+  icon: () => JSX.Element
   borderRadius?: string
   isOpenHover?: string
   filled?: boolean
@@ -15,11 +17,8 @@ interface Props {
 
 export default function SvgIcon(props: Props) {
   const {
-    size = 20,
-    borderRadius = 'round',
     isOpenHover = true,
-    icon = '',
-    filled = false,
+    icon = () => <></>,
     customizeClass = '',
     disabled = false,
     overallSize = 40,
@@ -35,7 +34,7 @@ export default function SvgIcon(props: Props) {
       }
       style={{ width: `${overallSize}px`, height: `${overallSize}px` }}
     >
-      <Image width={size} height={size} src={`/icons/${props.icon}.svg`} alt="icon"/>
+      {isFunction(icon) ? icon() : icon}
     </i>
   )
 }

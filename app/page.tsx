@@ -1,6 +1,8 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import React from 'react'
+import Weather from '@/app/components/icons/Weather'
 import SvgIcon from '@/app/components/global/SvgIcon'
 
 export default function Home() {
@@ -12,12 +14,16 @@ export default function Home() {
     else
       setTheme('dark')
   }
+
+  const [clientTheme, setClientTheme] = React.useState<() => JSX.Element>(Weather().Moon)
+
+  React.useEffect(() => setClientTheme(theme && theme === 'dark' ? Weather().Sun : Weather().Moon), [theme])
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button className="w-52 h-32 rounded" onClick={() => toggleTheme()}>
-        toggle theme
+      <button onClick={() => toggleTheme()}>
+        <SvgIcon icon={clientTheme}/>
       </button>
-      <SvgIcon icon={'audio/subtitle'} />
     </main>
   )
 }
