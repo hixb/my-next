@@ -2,6 +2,4 @@
  * check if it is a function
  * @param {unknown} arg parameter
  */
-export function isFunction(arg: unknown): arg is () => void {
-  return typeof arg === 'function'
-}
+export const isFunction = (arg: unknown): arg is () => void => typeof arg === 'function'
