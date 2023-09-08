@@ -1,0 +1,15 @@
+.disabled {
+  opacity: 0.5;
+  cursor: no-drop;
+}
+
+.open-hover {
+  transition: var(--my-theme-trans2);
+
+  &:hover {
+    transition: var(--my-theme-trans2);
+    background-color: var(--my-transB);
+  }
+
+  @apply rounded-full
+}
