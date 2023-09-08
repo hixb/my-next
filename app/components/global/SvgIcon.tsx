@@ -1,4 +1,7 @@
+'use client'
+
 import classes from '@/app/styles/components/svgIcon.module.scss'
+import { isFunction } from '@/app/utils/useChecks'
 
 interface Props {
   icon: () => JSX.Element
@@ -31,7 +34,7 @@ export default function SvgIcon(props: Props) {
       }
       style={{ width: `${overallSize}px`, height: `${overallSize}px` }}
     >
-      {icon()}
+      {isFunction(icon) ? icon() : icon}
     </i>
   )
 }
