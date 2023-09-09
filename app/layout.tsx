@@ -4,6 +4,7 @@ import { Barlow } from 'next/font/google'
 import { Providers } from './providers'
 import Header from '@/app/components/base/Header'
 import './styles/globals.scss'
+import SidebarProvider from '@/app/context/useSidebar'
 
 const barlow = Barlow({
   weight: '500',
@@ -19,12 +20,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${barlow.className}`}>
-        <Providers>
-          <Header></Header>
-          <div className="flex relative">
-            {children}
-          </div>
-        </Providers>
+        <SidebarProvider>
+          <Providers>
+            <Header></Header>
+            <div className="flex relative">
+              {children}
+            </div>
+          </Providers>
+        </SidebarProvider>
       </body>
     </html>
   )

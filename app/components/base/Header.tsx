@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import { UseSidebar } from '@/app/context/useSidebar'
+import { useScreen } from '@/app/utils/useScreen'
 import SvgIcon from '@/app/components/general/SvgIcon'
 import Essetional from '@/app/components/icons/Essetional'
 import Search from '@/app/components/icons/Search'
@@ -15,21 +17,32 @@ import header from '@/app/styles/pages/header.module.scss'
 
 export default function Header() {
   const router = useRouter()
+  const { setSidebar } = React.useContext(UseSidebar)
+  const { lessThanMD, screenWidth, ScreenSize } = useScreen()
 
   const [showSearchLayer, setShowSearchLayer] = React.useState(false)
 
   const [footerMenuList] = React.useState([
     { identify: 'home', icon: Essetional().Home1, go: () => router.push('/') },
     { identify: 'search', icon: Search().Search, go: () => setShowSearchLayer(!showSearchLayer) },
-    { identify: 'menu', icon: Settings().Menu, go: () => router.push('/') },
+    {
+      identify: 'menu',
+      icon: Settings().Menu,
+      go: () => toggleSidebar(),
+    },
     { identify: 'theme', icon: Settings().Menu, go: () => router.push('/') },
     { identify: 'up', icon: Arrow().ArrowUp3, go: () => router.push('/') },
   ])
 
+  function toggleSidebar() {
+    if (setSidebar)
+      setSidebar(screenWidth <= ScreenSize.XL && screenWidth >= ScreenSize.MD ? 2 : lessThanMD ? 1 : 0)
+  }
+
   return (
     <header className={header.header_wrap}>
       <div className={'w-56 flex items-center max-md:w-auto max-md:min-w-40'}>
-        <SvgIcon icon={Essetional().Line}></SvgIcon>
+        <SvgIcon icon={Essetional().Line} onClick={toggleSidebar}></SvgIcon>
         <h1 className={'ml-1 text-lg'}>
           <Link href={'/'} rel={'canonical'} title={'HELLO'}>
             HELLO
