@@ -1,10 +1,15 @@
 import type { Metadata } from 'next'
 import type React from 'react'
-import { Inter } from 'next/font/google'
+import { Barlow } from 'next/font/google'
 import { Providers } from './providers'
+import Header from '@/app/components/base/Header'
 import './styles/globals.scss'
+import SidebarProvider from '@/app/context/useSidebar'
 
-const inter = Inter({ subsets: ['latin'] })
+const barlow = Barlow({
+  weight: '500',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,10 +19,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <Providers>
-          {children}
-        </Providers>
+      <body className={`${barlow.className}`}>
+        <SidebarProvider>
+          <Providers>
+            <Header></Header>
+            <div className="flex relative">
+              {children}
+            </div>
+          </Providers>
+        </SidebarProvider>
       </body>
     </html>
   )
