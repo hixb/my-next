@@ -1,5 +1,5 @@
 export default function Archive() {
-  const ArchiveAdd = () => (
+  const archiveAdd = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
@@ -16,7 +16,7 @@ export default function Archive() {
     </svg>
   )
 
-  const ArchiveMinus = () => (
+  const archiveMinus = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
@@ -34,7 +34,7 @@ export default function Archive() {
 
   )
 
-  const Frame = () => (
+  const frame = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
@@ -53,8 +53,8 @@ export default function Archive() {
   )
 
   return {
-    ArchiveAdd,
-    ArchiveMinus,
-    Frame,
+    archiveAdd,
+    archiveMinus,
+    frame,
   }
 }

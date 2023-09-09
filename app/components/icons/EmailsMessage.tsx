@@ -1,5 +1,5 @@
 export default function EmailsMessage() {
-  const Direct = () => (
+  const direct = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#292D32"
@@ -16,7 +16,7 @@ export default function EmailsMessage() {
     </svg>
   )
 
-  const Message = () => (
+  const message = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -35,7 +35,7 @@ export default function EmailsMessage() {
     </svg>
   )
 
-  const Message3 = () => (
+  const message3 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke"
@@ -49,7 +49,7 @@ export default function EmailsMessage() {
     </svg>
   )
 
-  const Sms = () => (
+  const sms = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
@@ -61,9 +61,9 @@ export default function EmailsMessage() {
   )
 
   return {
-    Direct,
-    Message,
-    Message3,
-    Sms,
+    direct,
+    message,
+    message3,
+    sms,
   }
 }

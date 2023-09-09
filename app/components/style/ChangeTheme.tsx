@@ -1,11 +1,12 @@
 'use client'
 
-import { useTheme } from 'next-themes'
 import React from 'react'
+import { useTheme } from 'next-themes'
 import SvgIcon from '@/app/components/general/SvgIcon'
-import Weather from '@/app/components/icons/Weather'
+import { useIcon } from '@/app/utils/useIcons'
 
 export default function ChangeTheme() {
+  const icon = useIcon()
   const { theme, setTheme } = useTheme()
 
   function toggleTheme() {
@@ -15,9 +16,9 @@ export default function ChangeTheme() {
       setTheme('dark')
   }
 
-  const [clientTheme, setClientTheme] = React.useState<() => JSX.Element>(Weather().Moon)
+  const [clientTheme, setClientTheme] = React.useState<() => JSX.Element>(icon.weather.moon)
 
-  React.useEffect(() => setClientTheme(theme && theme === 'dark' ? Weather().Sun : Weather().Moon), [theme])
+  React.useEffect(() => setClientTheme(theme && theme === 'dark' ? icon.weather.sun : icon.weather.moon), [theme])
 
   return (
     <SvgIcon onClick={toggleTheme} icon={clientTheme}></SvgIcon>

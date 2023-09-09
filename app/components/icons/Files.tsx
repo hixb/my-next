@@ -1,5 +1,5 @@
 export default function Files() {
-  const Folder = () => (
+  const folder = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -8,7 +8,7 @@ export default function Files() {
     </svg>
   )
 
-  const Folder2 = () => (
+  const folder2 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -19,7 +19,7 @@ export default function Files() {
     </svg>
   )
 
-  const FolderMinus = () => (
+  const folderMinus = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M14.4297 14.5508H9.42969" stroke="#292D32" strokeWidth="1.5"
@@ -31,7 +31,7 @@ export default function Files() {
     </svg>
   )
 
-  const FolderOpen = () => (
+  const folderOpen = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -48,9 +48,9 @@ export default function Files() {
   )
 
   return {
-    Folder,
-    Folder2,
-    FolderMinus,
-    FolderOpen,
+    folder,
+    folder2,
+    folderMinus,
+    folderOpen,
   }
 }

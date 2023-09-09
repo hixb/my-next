@@ -1,5 +1,5 @@
 export default function Essetional() {
-  const Add = () => (
+  const add = () => (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -12,7 +12,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const CloseSquare = () => (
+  const closeSquare = () => (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -26,7 +26,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const Home = () => (
+  const home = () => (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -41,7 +41,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const Home1 = () => (
+  const home1 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M12 18V15" stroke="#292D32" strokeWidth="1.5"
@@ -53,7 +53,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const Line = () => (
+  const line = () => (
     <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M 3 18 H 14 M 10 6 H 21" stroke="#292D32"/>
       <line className="set-svg-stroke" stroke="#292D32" x1="3" x2="21"
@@ -61,7 +61,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const Share = () => (
+  const share = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M16.9609 6.17188C18.9609 7.56187 20.3409 9.77187 20.6209 12.3219"
@@ -83,7 +83,7 @@ export default function Essetional() {
     </svg>
   )
 
-  const Share1 = () => (
+  const share1 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -94,12 +94,12 @@ export default function Essetional() {
   )
 
   return {
-    Add,
-    CloseSquare,
-    Home,
-    Home1,
-    Line,
-    Share,
-    Share1,
+    add,
+    closeSquare,
+    home,
+    home1,
+    line,
+    share,
+    share1,
   }
 }
