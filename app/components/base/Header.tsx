@@ -8,7 +8,7 @@ import { useScreen } from '@/app/utils/useScreen'
 import { useIcon } from '@/app/utils/useIcons'
 import SvgIcon from '@/app/components/general/SvgIcon'
 import ChangeTheme from '@/app/components/style/ChangeTheme'
-import header from '@/app/styles/pages/header.module.scss'
+import header from '@/app/styles/components/header.module.scss'
 
 export default function Header() {
   const router = useRouter()
@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <header className={header.header_wrap}>
       <div className={'w-56 flex items-center max-md:w-auto max-md:min-w-40'}>
-        <SvgIcon icon={icon.essetional.line} onClick={toggleSidebar}></SvgIcon>
+        <SvgIcon icon={() => icon.essetional.line(40)} onClick={toggleSidebar}></SvgIcon>
         <h1 className={'ml-1 text-lg'}>
           <Link href={'/'} rel={'canonical'} title={'HELLO'}>
             HELLO

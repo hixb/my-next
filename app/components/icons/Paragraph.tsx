@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Paragraph() {
-  const translate = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const translate = (size?: SvgSize) => (
+    <svg fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M19.0612 18.6684L16.9212 14.3984L14.7812 18.6684" stroke="#292D32" strokeLinecap="round"

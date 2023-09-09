@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Users() {
-  const profileUser = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const profileUser = (size?: SvgSize) => (
+    <svg fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M9.15859 10.87C9.05859 10.86 8.93859 10.86 8.82859 10.87C6.44859 10.79 4.55859 8.84 4.55859 6.44C4.55859 3.99 6.53859 2 8.99859 2C11.4486 2 13.4386 3.99 13.4386 6.44C13.4286 8.84 11.5386 10.79 9.15859 10.87Z"

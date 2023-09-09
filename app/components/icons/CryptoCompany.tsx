@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function CryptoCompany() {
-  const facebook = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const facebook = (size?: SvgSize) => (
+    <svg fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         className="set-svg-stroke"
@@ -14,8 +16,8 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const google = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const google = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M21.5892 10.1783H12.1992V13.8883H17.7092C17.5992 14.8083 16.9992 16.1983 15.6692 17.1283C14.8292 17.7183 13.6892 18.1283 12.1992 18.1283C9.55922 18.1283 7.30922 16.3883 6.50922 13.9683C6.29922 13.3483 6.17922 12.6783 6.17922 11.9883C6.17922 11.2983 6.29922 10.6283 6.49922 10.0083C6.55922 9.8283 6.62922 9.63829 6.70922 9.46829C7.65922 7.33829 9.75922 5.85828 12.1992 5.85828C14.0792 5.85828 15.3392 6.6683 16.0692 7.3483L18.8892 4.58829C17.1592 2.97829 14.8992 1.98828 12.1992 1.98828C8.28922 1.98828 4.90922 4.22829 3.26922 7.49829C2.58922 8.85829 2.19922 10.3783 2.19922 11.9883C2.19922 13.5983 2.58922 15.1183 3.26922 16.4783L3.27922 16.4683V16.4783C4.91922 19.7483 8.28922 21.9883 12.1992 21.9883C14.8992 21.9883 17.1692 21.0983 18.8192 19.5683C20.7092 17.8283 21.7992 15.2583 21.7992 12.2083C21.7992 11.3983 21.7292 10.7983 21.5892 10.1783Z"
@@ -24,8 +26,8 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const huobiTokenHt = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const huobiTokenHt = (size?: SvgSize) => (
+    <svg fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         className="set-svg-stroke"
@@ -41,8 +43,8 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const iconIcx = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const iconIcx = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path d="M15.6 6C14.55 5.37 13.32 5 12 5C8.13 5 5 8.13 5 12C5 13.34 5.38 14.59 6.03 15.65" stroke="black"
         strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -59,8 +61,8 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const js = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const js = (size?: SvgSize) => (
+    <svg fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M9 9.00155L8.98999 16.9315C8.98999 18.4515 7.35002 19.4215 6.02002 18.6815L3.51001 17.2916C3.19001 17.1116 3 16.7816 3 16.4216V7.60156C3 7.24156 3.20001 6.90157 3.51001 6.73156L11.51 2.29156C11.81 2.12156 12.18 2.12156 12.48 2.29156L20.48 6.73156C20.8 6.91157 20.99 7.24156 20.99 7.60156V16.4216C20.99 16.7816 20.79 17.1216 20.48 17.2916L12.48 21.7316C12.18 21.9016 11.81 21.9016 11.51 21.7316L10 21.0016"
@@ -75,22 +77,22 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const pinterest = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+  const pinterest = (size?: SvgSize) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size ?? 20} height={size ?? 20} viewBox="0 0 256 256">
       <path fill="currentColor"
         d="M216 112c0 22.57-7.9 43.2-22.23 58.11C180.39 184 162.25 192 144 192c-17.88 0-29.82-5.86-37.43-12l-10.78 45.83A8 8 0 0 1 88 232a8.24 8.24 0 0 1-1.84-.21a8 8 0 0 1-6-9.62l32-136a8 8 0 0 1 15.58 3.66l-16.9 71.8C114 166 123.3 176 144 176c27.53 0 56-23.94 56-64a72 72 0 1 0-134.37 36a8 8 0 0 1-13.85 8A88 88 0 1 1 216 112Z"/>
     </svg>
   )
 
-  const telegram = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+  const telegram = (size?: SvgSize) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size ?? 20} height={size ?? 20} viewBox="0 0 256 256">
       <path fill="currentColor"
         d="M236.88 26.19a9 9 0 0 0-9.16-1.57L25.06 103.93a14.22 14.22 0 0 0 2.43 27.21L80 141.45V200a15.92 15.92 0 0 0 10 14.83a15.91 15.91 0 0 0 17.51-3.73l25.32-26.26L173 220a15.88 15.88 0 0 0 10.51 4a16.3 16.3 0 0 0 5-.79a15.85 15.85 0 0 0 10.67-11.63L239.77 35a9 9 0 0 0-2.89-8.81Zm-61.14 36l-89.59 64.16l-49.6-9.73ZM96 200v-47.48l24.79 21.74Zm87.53 8l-82.68-72.5l119-85.29Z"/>
     </svg>
   )
 
-  const twitch = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const twitch = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path fillRule="evenodd" clipRule="evenodd" d="M4.5 2H21.5V14L16.5 19H11.5L9.5 22H6.5V19H2.5V5L4.5 2Z"
         stroke="black" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round"
@@ -104,15 +106,15 @@ export default function CryptoCompany() {
     </svg>
   )
 
-  const twitter = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+  const twitter = (size?: SvgSize) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size ?? 20} height={size ?? 20} viewBox="0 0 256 256">
       <path fill="currentColor"
         d="M247.39 68.94A8 8 0 0 0 240 64h-30.43a48.66 48.66 0 0 0-41.47-24a46.91 46.91 0 0 0-33.75 13.7A47.9 47.9 0 0 0 120 88v6.09C79.74 83.47 46.81 50.72 46.46 50.37a8 8 0 0 0-13.65 4.92c-4.31 47.79 9.57 79.77 22 98.18a110.93 110.93 0 0 0 21.88 24.2c-15.23 17.53-39.21 26.74-39.47 26.84a8 8 0 0 0-3.85 11.93c.75 1.12 3.75 5.05 11.08 8.72C53.51 229.7 65.48 232 80 232c70.67 0 129.72-54.42 135.75-124.44l29.91-29.9a8 8 0 0 0 1.73-8.72Zm-45 29.41a8 8 0 0 0-2.32 5.14C196 166.58 143.28 216 80 216c-10.56 0-18-1.4-23.22-3.08c11.51-6.25 27.56-17 37.88-32.48A8 8 0 0 0 92 169.08c-.47-.27-43.91-26.34-44-96c16 13 45.25 33.17 78.67 38.79A8 8 0 0 0 136 104V88a32 32 0 0 1 9.6-22.92A30.94 30.94 0 0 1 167.9 56c12.66.16 24.49 7.88 29.44 19.21a8 8 0 0 0 7.33 4.79h16Z"/>
     </svg>
   )
 
-  const whatsapp = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const whatsapp = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.94 20.63C8.42 21.5 10.15 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 13.82 2.49003 15.53 3.34003 17L2 22L6.94 20.63Z"

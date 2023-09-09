@@ -5,6 +5,7 @@ import { Providers } from './providers'
 import Header from '@/app/components/base/Header'
 import './styles/globals.scss'
 import SidebarProvider from '@/app/context/useSidebar'
+import Sidebar from '@/app/components/base/Sidebar'
 
 const barlow = Barlow({
   weight: '500',
@@ -24,7 +25,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Providers>
             <Header></Header>
             <div className="flex relative">
-              {children}
+              <Sidebar></Sidebar>
+              <main className={'pt-8 w-full max-md:pt-24 max-w-[1280px] mx-auto'}>
+                <div className={'px-7 relative'}>
+                  <div className={'flex max-2md:flex-col'}>
+                    <div className={'flex-[1_0_calc(100%-var(--my-sidebar-width)-25px)] w-[calc(100%-var(--my-sidebar-width)-25px)] max-2md:w-full'}>
+                      {children}
+                    </div>
+                  </div>
+                </div>
+              </main>
             </div>
           </Providers>
         </SidebarProvider>

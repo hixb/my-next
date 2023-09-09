@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Archive() {
-  const archiveAdd = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const archiveAdd = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
         <path className="set-svg-stroke" d="M14.5 10.6523H9.5" stroke="#292D32" strokeWidth="1.5"
@@ -16,8 +18,8 @@ export default function Archive() {
     </svg>
   )
 
-  const archiveMinus = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const archiveMinus = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
         <path className="set-svg-stroke" d="M14.5 10.6523H9.5" stroke="#292D32" strokeWidth="1.5"
@@ -34,8 +36,8 @@ export default function Archive() {
 
   )
 
-  const frame = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const frame = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <g>
         <path className="set-svg-stroke" d="M14.5 10.6523H9.5" stroke="#292D32" strokeWidth="1.5"

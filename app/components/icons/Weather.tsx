@@ -1,7 +1,9 @@
+import type { SvgSize } from '@/types'
+
 export default function Weather() {
-  const moon = () => (
+  const moon = (size?: SvgSize) => (
     <svg
-      fill="none" height="24" viewBox="0 0 24 24" width="24"
+      fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -11,9 +13,9 @@ export default function Weather() {
     </svg>
   )
 
-  const sun = () => (
+  const sun = (size?: SvgSize) => (
     <svg
-      fill="none" height="24" viewBox="0 0 24 24" width="24"
+      fill="none" height={size ?? 20} viewBox="0 0 24 24" width={size ?? 20}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

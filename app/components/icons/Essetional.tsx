@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Essetional() {
-  const add = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const add = (size?: SvgSize) => (
+    <svg fill="none" width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg">
       <path
         className="set-svg-stroke" d="M6 12H18" stroke="#292D32" strokeLinecap="round"
@@ -12,8 +14,8 @@ export default function Essetional() {
     </svg>
   )
 
-  const closeSquare = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const closeSquare = (size?: SvgSize) => (
+    <svg fill="none" width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M9.16992 14.8319L14.8299 9.17188" stroke="#292D32" strokeLinecap="round" strokeLinejoin="round"
@@ -26,8 +28,8 @@ export default function Essetional() {
     </svg>
   )
 
-  const home = () => (
-    <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
+  const home = (size?: SvgSize) => (
+    <svg fill="none" viewBox="0 0 24 24" width={size ?? 20} height={size ?? 20}
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M10.0693 2.81984L3.13929 8.36983C2.35929 8.98983 1.85929 10.2999 2.02929 11.2799L3.35929 19.2398C3.59929 20.6598 4.95928 21.8098 6.39928 21.8098H17.5993C19.0293 21.8098 20.3993 20.6498 20.6393 19.2398L21.9693 11.2799C22.1293 10.2999 21.6293 8.98983 20.8593 8.36983L13.9293 2.82985C12.8593 1.96985 11.1293 1.96984 10.0693 2.81984Z"
@@ -41,8 +43,8 @@ export default function Essetional() {
     </svg>
   )
 
-  const home1 = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const home1 = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M12 18V15" stroke="#292D32" strokeWidth="1.5"
         strokeLinecap="round" strokeLinejoin="round"/>
@@ -53,16 +55,17 @@ export default function Essetional() {
     </svg>
   )
 
-  const line = () => (
-    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  const line = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} fill="none" viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg">
       <path d="M 3 18 H 14 M 10 6 H 21" stroke="#292D32"/>
       <line className="set-svg-stroke" stroke="#292D32" x1="3" x2="21"
         y1="12" y2="12"/>
     </svg>
   )
 
-  const share = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const share = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M16.9609 6.17188C18.9609 7.56187 20.3409 9.77187 20.6209 12.3219"
         stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -83,8 +86,8 @@ export default function Essetional() {
     </svg>
   )
 
-  const share1 = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const share1 = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M16.44 8.8999C20.04 9.2099 21.51 11.0599 21.51 15.1099V15.2399C21.51 19.7099 19.72 21.4999 15.25 21.4999H8.73998C4.26998 21.4999 2.47998 19.7099 2.47998 15.2399V15.1099C2.47998 11.0899 3.92998 9.2399 7.46998 8.9099"/>
