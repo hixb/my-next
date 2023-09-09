@@ -1,9 +1,3 @@
-body {
-  background-color: var(--my-bg-base-color);
-  color: var(--my-text-base-color);
-  transition: var(--my-theme-trans2);
-}
-
 .set-svg-stroke {
   stroke: var(--my-special-color);
 }
@@ -15,4 +9,74 @@ svg {
   * {
     stroke: var(--my-svg-color);
   }
+}
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+body {
+  background-color: var(--my-bg-base-color);
+  color: var(--my-text-base-color);
+  transition: var(--my-theme-trans3);
+  font-family: 'Barlow', 'Noto Sans SC', sans-serif;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+::selection {
+  color: #fff;
+  background: var(--my-special-color);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 3px;
+  background-color: var(--my-scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--my-scrollbar-bg);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--my-scrollbar-bg-hover);
+  }
+}
+
+hr {
+  color: var(--my-border-color);
+}
+
+i {
+  font-style: normal;
+}
+
+.blur-backdrop {
+  backdrop-filter: saturate(180%) blur(10px);
+  background: rgba(0, 0, 0, .2);
+  transform: translate(-50%, -50%);
+
+  * {
+    backdrop-filter: none;
+  }
+
+  @apply
+  block
+  fixed
+  top-1/2
+  left-1/2
+  z-10
+  transition-[var(--my-theme-trans1)]
+  w-screen
+  h-screen
 }
