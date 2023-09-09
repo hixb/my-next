@@ -1,5 +1,5 @@
 export default function Arrow() {
-  const ArrowDown = () => (
+  const arrowDown = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path d="M19.9181 8.94922L13.3981 15.4692C12.6281 16.2392 11.3681 16.2392 10.5981 15.4692L4.07812 8.94922"
@@ -8,7 +8,7 @@ export default function Arrow() {
     </svg>
   )
 
-  const ArrowRight = () => (
+  const arrowRight = () => (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -19,7 +19,7 @@ export default function Arrow() {
     </svg>
   )
 
-  const ArrowUp2 = () => (
+  const arrowUp2 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -36,7 +36,7 @@ export default function Arrow() {
     </svg>
   )
 
-  const ArrowUp3 = () => (
+  const arrowUp3 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -46,7 +46,7 @@ export default function Arrow() {
     </svg>
   )
 
-  const Frame2 = () => (
+  const frame2 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -63,7 +63,7 @@ export default function Arrow() {
     </svg>
   )
 
-  const Refresh = () => (
+  const refresh = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -81,11 +81,11 @@ export default function Arrow() {
   )
 
   return {
-    ArrowDown,
-    ArrowRight,
-    ArrowUp2,
-    ArrowUp3,
-    Frame2,
-    Refresh,
+    arrowDown,
+    arrowRight,
+    arrowUp2,
+    arrowUp3,
+    frame2,
+    refresh,
   }
 }

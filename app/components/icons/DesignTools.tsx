@@ -1,5 +1,5 @@
 export default function DesignTools() {
-  const Brush2 = () => (
+  const brush2 = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -12,7 +12,7 @@ export default function DesignTools() {
     </svg>
   )
 
-  const Copy = () => (
+  const copy = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -54,8 +54,8 @@ export default function DesignTools() {
   )
 
   return {
-    Brush2,
-    Copy,
+    brush2,
+    copy,
     copySuccess,
     path,
   }

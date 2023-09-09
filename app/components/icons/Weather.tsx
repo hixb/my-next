@@ -1,5 +1,5 @@
 export default function Weather() {
-  const Moon = () => (
+  const moon = () => (
     <svg
       fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -11,7 +11,7 @@ export default function Weather() {
     </svg>
   )
 
-  const Sun = () => (
+  const sun = () => (
     <svg
       fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ export default function Weather() {
   )
 
   return {
-    Moon,
-    Sun,
+    moon,
+    sun,
   }
 }

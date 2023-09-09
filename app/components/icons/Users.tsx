@@ -1,5 +1,5 @@
 export default function Users() {
-  const ProfileUser = () => (
+  const profileUser = () => (
     <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
       xmlns="http://www.w3.org/2000/svg">
       <path
@@ -24,6 +24,6 @@ export default function Users() {
   )
 
   return {
-    ProfileUser,
+    profileUser,
   }
 }
