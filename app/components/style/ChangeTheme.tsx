@@ -16,11 +16,11 @@ export default function ChangeTheme() {
       setTheme('dark')
   }
 
-  const [clientTheme, setClientTheme] = React.useState<() => JSX.Element>(icon.weather.moon)
+  const [clientTheme, setClientTheme] = React.useState(icon.weather.moon(25))
 
-  React.useEffect(() => setClientTheme(theme && theme === 'dark' ? icon.weather.sun : icon.weather.moon), [theme])
+  React.useEffect(() => setClientTheme(theme && theme === 'dark' ? icon.weather.sun(25) : icon.weather.moon(25)), [theme])
 
   return (
-    <SvgIcon onClick={toggleTheme} icon={clientTheme}></SvgIcon>
+    <SvgIcon onClick={toggleTheme} icon={() => clientTheme}></SvgIcon>
   )
 }

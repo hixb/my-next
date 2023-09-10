@@ -161,7 +161,7 @@ export default function Sidebar() {
                                       openSidebar
                                         ? <SvgIcon
                                             customizeClass={`${v.active ? 'rotate-180' : ''} absolute top-0 bottom-0 right-1.5 m-auto`}
-                                            icon={icon.arrow.arrowDown}
+                                            icon={() => icon.arrow.arrowDown(13)}
                                             overallSize={30}
                                             isOpenHover={false}
                                           ></SvgIcon>

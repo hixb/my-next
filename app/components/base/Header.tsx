@@ -38,7 +38,7 @@ export default function Header() {
   return (
     <header className={header.header_wrap}>
       <div className={'w-56 flex items-center max-md:w-auto max-md:min-w-40'}>
-        <SvgIcon icon={() => icon.essetional.line(40)} onClick={toggleSidebar}></SvgIcon>
+        <SvgIcon icon={() => icon.essetional.line()} onClick={toggleSidebar}></SvgIcon>
         <h1 className={'ml-1 text-lg'}>
           <Link href={'/'} rel={'canonical'} title={'HELLO'}>
             HELLO
