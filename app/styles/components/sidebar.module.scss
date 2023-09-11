@@ -1,0 +1,133 @@
+.menu_item {
+  @apply
+  flex
+  w-full
+  transition-[var(--my-theme-trans3)]
+  rounded-lg
+  cursor-pointer
+  px-2
+  select-none
+  hover:text-[var(--my-special-color)]
+  hover:bg-[var(--my-transB)]
+}
+
+.sub_list {
+  &:before {
+    @apply
+    content-['']
+    absolute
+    block
+    left-7
+    top-0
+    opacity-20
+    w-px
+    h-[calc(100%-16px)]
+    border-l
+    border-[var(--my-text-base-color)]
+    overflow-hidden
+    rounded-full
+  }
+
+  @apply relative pl-12
+}
+
+.sublist_item {
+  &:before {
+    @apply
+    content-['']
+    absolute
+    block
+    -left-[20px]
+    top-1/2
+    opacity-10
+    w-5
+    h-px
+    border-b
+    border-[var(--my-text-base-color)]
+    -translate-y-2/4
+  }
+
+  @apply h-10 flex items-center px-4
+}
+
+.prompt_bubble {
+  @apply
+  block
+  absolute
+  top-[3px]
+  left-11
+  w-max
+  shadow-[0_5px_20px_0_rgba(0,0,0,.1)]
+  rounded-tl-[5px]
+  rounded-tr-[16px]
+  rounded-br-[16px]
+  rounded-bl-[16px]
+  bg-[var(--my-bg-base-color)]
+  mx-1.5
+  py-2
+  opacity-0
+  invisible
+  truncate
+  transition-[var(--my-theme-trans2)]
+}
+
+.sidebar_footer {
+  border-top: 1px solid var(--my-border-color);
+  border-right: 1px solid var(--my-dark-border);
+
+  @apply
+  fixed
+  self-end
+  bottom-0
+  left-0
+  right-0
+  text-center
+  h-20
+  flex
+  flex-col
+  items-center
+  justify-center
+  transition-[var(--my-theme-trans3)]
+}
+
+.menu_list {
+  &:after {
+    @apply content-[''] border-b border-[var(--my-border-color)] w-full my-3 block
+  }
+}
+
+.open_sidebar {
+  animation: slide-fade-open 0.3s ease-out;
+
+  @apply bg-[var(--my-bg-base-color)] mt-5 ml-5 max-w-[480px] overflow-hidden
+}
+
+.close_sidebar {
+  animation: slide-fade-close 0.3s ease-out;
+
+  @apply opacity-0 invisible
+}
+
+@keyframes slide-fade-open {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-fade-close {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}

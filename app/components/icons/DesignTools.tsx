@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function DesignTools() {
-  const brush2 = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const brush2 = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M6.94 20.63C8.42 21.5 10.15 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 13.82 2.49003 15.53 3.34003 17L2 22L6.94 20.63Z"
@@ -12,8 +14,8 @@ export default function DesignTools() {
     </svg>
   )
 
-  const copy = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const copy = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"
@@ -24,8 +26,8 @@ export default function DesignTools() {
     </svg>
   )
 
-  const copySuccess = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const copySuccess = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke"
         d="M22 11.1V6.9C22 3.4 20.6 2 17.1 2H12.9C9.4 2 8 3.4 8 6.9V8H11.1C14.6 8 16 9.4 16 12.9V16H17.1C20.6 16 22 14.6 22 11.1Z"
@@ -39,8 +41,8 @@ export default function DesignTools() {
     </svg>
   )
 
-  const path = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const path = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M19.7901 7.26814L16.7601 4.23814C15.6101 3.08814 14.0401 3.14814 13.2701 4.37814L11.5801 7.04814L16.9801 12.4481L19.6501 10.7581C20.8001 10.0281 20.8701 8.34814 19.7901 7.26814Z"

@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function TypeParagraphCharacter() {
-  const link21 = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const link21 = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M13.0598 10.9414C15.3098 13.1914 15.3098 16.8314 13.0598 19.0714C10.8098 21.3114 7.16985 21.3214 4.92985 19.0714C2.68985 16.8214 2.67985 13.1814 4.92985 10.9414"

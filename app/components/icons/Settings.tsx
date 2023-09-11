@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Settings() {
-  const menu = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const menu = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M17.5401 8.31063C18.8987 8.31063 20.0001 7.20925 20.0001 5.85062C20.0001 4.492 18.8987 3.39062 17.5401 3.39062C16.1814 3.39062 15.0801 4.492 15.0801 5.85062C15.0801 7.20925 16.1814 8.31063 17.5401 8.31063Z"

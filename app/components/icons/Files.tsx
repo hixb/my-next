@@ -1,6 +1,8 @@
+import type { SvgSize } from '@/types'
+
 export default function Files() {
-  const folder = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const folder = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
@@ -8,8 +10,8 @@ export default function Files() {
     </svg>
   )
 
-  const folder2 = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const folder2 = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
@@ -19,8 +21,8 @@ export default function Files() {
     </svg>
   )
 
-  const folderMinus = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const folderMinus = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path className="set-svg-stroke" d="M14.4297 14.5508H9.42969" stroke="#292D32" strokeWidth="1.5"
         strokeMiterlimit="10"
@@ -31,8 +33,8 @@ export default function Files() {
     </svg>
   )
 
-  const folderOpen = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  const folderOpen = (size?: SvgSize) => (
+    <svg width={size ?? 20} height={size ?? 20} viewBox="0 0 24 24" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M21.6707 14.3L21.2707 19.3C21.1207 20.83 21.0007 22 18.2907 22H5.71074C3.00074 22 2.88074 20.83 2.73074 19.3L2.33074 14.3C2.25074 13.47 2.51074 12.7 2.98074 12.11C2.99074 12.1 2.99074 12.1 3.00074 12.09C3.55074 11.42 4.38074 11 5.31074 11H18.6907C19.6207 11 20.4407 11.42 20.9807 12.07C20.9907 12.08 21.0007 12.09 21.0007 12.1C21.4907 12.69 21.7607 13.46 21.6707 14.3Z"
