@@ -101,7 +101,7 @@ export default function Sidebar() {
   React.useEffect(() => {
     if (screenWidth <= ScreenSize.MD || screenWidth <= ScreenSize.XL)
       setSidebarActive(2)
-  }, [document])
+  }, [])
 
   function setSidebarActive(always: SidebarAlways) {
     if (screenWidth <= ScreenSize.XL && screenWidth >= ScreenSize.MD)
