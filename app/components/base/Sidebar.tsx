@@ -3,12 +3,12 @@
 import React from 'react'
 import Link from 'next/link'
 import type { SidebarAlways } from '@/app/context/useSidebar'
+import type { Relation } from '@/types'
+import { useIcon } from '@/app/utils/useIcons'
 import { UseSidebar } from '@/app/context/useSidebar'
 import { useScreen } from '@/app/utils/useScreen'
-import sidebar from '@/app/styles/components/sidebar.module.scss'
-import { useIcon } from '@/app/utils/useIcons'
+import style from '@/app/styles/components/sidebar.module.scss'
 import SvgIcon from '@/app/components/general/SvgIcon'
-import type { Relation } from '@/types'
 
 interface SidebarItemParams {
   link: string
@@ -81,6 +81,28 @@ export default function Sidebar() {
     ],
   })
 
+  const useDropDownSubListRef = React.useRef<HTMLUListElement>(null)
+
+  React.useEffect(() => {
+    if (!openSidebar) {
+      for (const key in sidebarList)
+        sidebarList[key].map(item => item.active = false)
+
+      if (useDropDownSubListRef.current)
+        useDropDownSubListRef.current.style.height = '0px'
+    }
+  }, [openSidebar])
+
+  React.useEffect(() => {
+    if (screenWidth < ScreenSize.MD + 100 || screenWidth <= ScreenSize.XL)
+      setSidebarActive(2)
+  }, [screenWidth])
+
+  React.useEffect(() => {
+    if (screenWidth <= ScreenSize.MD || screenWidth <= ScreenSize.XL)
+      setSidebarActive(2)
+  }, [document])
+
   function setSidebarActive(always: SidebarAlways) {
     if (screenWidth <= ScreenSize.XL && screenWidth >= ScreenSize.MD)
       always = 2
@@ -89,8 +111,15 @@ export default function Sidebar() {
       setSidebar(always)
   }
 
-  function transitionState() {
+  function transitionState(item: SidebarItemParams) {
+    if (!openSidebar || !useDropDownSubListRef?.current)
+      return
 
+    if (item.sublist?.length)
+      item.active = !item.active
+
+    if (useDropDownSubListRef.current && item.sublist?.length)
+      useDropDownSubListRef.current.style.height = `${item.active ? item.sublist?.length * SUBCLASS_HEIGHT : 0}px`
   }
 
   return (
@@ -99,8 +128,8 @@ export default function Sidebar() {
         className={
           `shrink-0 relative z-1 max-md:fixed max-md:invisible max-md:opacity-0 max-md:!z-40 border-r border-[var(--my-dark-border)] transition-[width] shadow-[0_0_15px_rgba(0,0,0,0.07)] z-20
           ${openSidebar ? 'w-60' : 'w-20'}
-          ${lessThanMD && openSidebar ? `${sidebar.open_sidebar}!h-[calc(100vh-40px)] !z-20 !w-10/12 !rounded-3xl max-md:!visible max-md:!opacity-100` : ''}
-          ${lessThanMD && !openSidebar ? sidebar.close_sidebar : ''}`
+          ${lessThanMD && openSidebar ? `${style.open_sidebar} !h-[calc(100vh-40px)] !z-20 !w-10/12 !rounded-3xl max-md:!visible max-md:!opacity-100` : ''}
+          ${lessThanMD && !openSidebar ? style.close_sidebar : ''}`
         }
       >
         <div className={'sticky top-16'}>
@@ -115,7 +144,11 @@ export default function Sidebar() {
               lessThanMD
                 ? (
                   <div className={'absolute top-2 left-8 flex items-center cursor-pointer'}>
-                    <SvgIcon icon={icon.essetional.closeSquare} onClick={() => setSidebarActive(2)}></SvgIcon>
+                    <SvgIcon
+                      icon={() => icon.essetional.closeSquare(40)}
+                      onClick={() => setSidebarActive(2)}
+                      isOpenHover={false}
+                    ></SvgIcon>
                     关闭
                   </div>
                   )
@@ -125,7 +158,7 @@ export default function Sidebar() {
               Object.keys(sidebarList).map((item, index) => (
                 <div
                   key={item}
-                  className={`${sidebar.menu_list} ${Object.keys(sidebarList).length === index + 1 ? 'after:!content-none' : ''}`}
+                  className={`${style.menu_list} ${Object.keys(sidebarList).length === index + 1 ? 'after:!content-none' : ''}`}
                 >
                   <ul className={'flex flex-col'}>
                     {
@@ -136,25 +169,25 @@ export default function Sidebar() {
                               ? (
                                 <Link
                                   href={v.link}
-                                  className={`items-center whitespace-normal ${sidebar.menu_item}`}
+                                  className={`items-center whitespace-normal ${style.menu_item}`}
                                   rel={v.rel.join(' ')}
                                 >
                                   {v.icon && <SvgIcon icon={v.icon} isOpenHover={false}></SvgIcon>}
-                                  <span className={`${openSidebar ? 'block' : 'none'} line-clamp-1`}>
+                                  <span className={`${openSidebar ? 'block' : 'hidden'} line-clamp-1`}>
                                     {v.title}
                                   </span>
                                 </Link>
                                 )
                               : (
                                 <div className={'flex flex-col items-start'}>
-                                  <div className={`${sidebar.menu_item} flex items-center relative w-full`}
-                                    onClick={() => transitionState}>
+                                  <div className={`${style.menu_item} flex items-center relative w-full`}
+                                    onClick={() => transitionState(v)}>
                                     {
                                       v.activeIcon
                                       && v.icon
                                       && <SvgIcon icon={v.active ? v.activeIcon : v.icon} isOpenHover={false}></SvgIcon>
                                     }
-                                    <span className={`${openSidebar ? 'block' : 'none'} line-clamp-1`}>
+                                    <span className={`${openSidebar ? 'block' : 'hidden'} line-clamp-1`}>
                                       {v.title}
                                     </span>
                                     {
@@ -169,12 +202,14 @@ export default function Sidebar() {
                                     }
                                   </div>
                                   <ul
-                                    className={`${sidebar.sub_list} flex items-center flex-col transition-[var(--my-theme-trans3)] z-20 overflow-hidden h-0`}>
+                                    ref={useDropDownSubListRef}
+                                    className={`${style.sub_list} flex items-center flex-col transition-[var(--my-theme-trans3)] z-20 overflow-hidden h-0`}
+                                  >
                                     {
                                       v.sublist?.map((sub, idx) => (
                                         <li
                                           key={idx}
-                                          className={`menu-item relative sublist-item transition-[var(--my-theme-trans2)] !h-[${SUBCLASS_HEIGHT}px] ${v.active ? 'visible opacity-100' : 'invisible opacity-0'}`}
+                                          className={`${style.menu_item} ${style.sublist_item} relative transition-[var(--my-theme-trans2)] !h-[${SUBCLASS_HEIGHT}px] ${v.active ? 'visible opacity-100' : 'invisible opacity-0'}`}
                                         >
                                           <Link href={sub.link} rel={sub.rel.join(' ')}>
                                             {sub.title}
@@ -187,25 +222,28 @@ export default function Sidebar() {
                                 )
                           }
                           {
-                            !openSidebar
-                              ? (
-                                  v.link
-                                    ? <span
-                                        className={`${sidebar.prompt_bubble} group-hover:opacity-100 group-hover:visible px-4`}>
-                                      {v.title}
-                                    </span>
-                                    : v.sublist?.map((sub, idx) => (
-                                      <Link
-                                        key={idx}
-                                        href={sub.link}
-                                        rel={sub.rel.join(' ')}
-                                        className={'h-8 flex items-center hover:text-[var(--my-special-color)] hover:bg-[var(--my-transB)] hover:transition-[var(--my-theme-trans3)] px-4'}
-                                    >
-                                        {sub.title}
-                                      </Link>
-                                    ))
-                                )
-                              : null
+                            !openSidebar && (
+                              v.link
+                                ? (
+                                  <span className={`${style.prompt_bubble} group-hover:opacity-100 group-hover:visible px-4`}>
+                                    {v.title}
+                                  </span>
+                                  )
+                                : <span className={`!flex flex-col ${style.prompt_bubble} group-hover:opacity-100 group-hover:visible`}>
+                                  {
+                                      v.sublist?.map((sub, idx) => (
+                                        <Link
+                                          key={idx}
+                                          href={sub.link}
+                                          rel={sub.rel.join(' ')}
+                                          className={'h-8 flex items-center hover:text-[var(--my-special-color)] hover:bg-[var(--my-transB)] hover:transition-[var(--my-theme-trans3)] px-4'}
+                                        >
+                                          {sub.title}
+                                        </Link>
+                                      ))
+                                    }
+                                </span>
+                            )
                           }
                         </li>
                       ))
@@ -215,7 +253,7 @@ export default function Sidebar() {
               ))
             }
             <div
-              className={`z-1 ${sidebar.sidebar_footer} ${openSidebar ? 'w-60' : 'w-20'} ${lessThanMD ? 'max-w-[480px] !w-full bottom-0 border-r-0 !absolute' : ''}`}>
+              className={`z-1 ${style.sidebar_footer} ${openSidebar ? 'w-60' : 'w-20'} ${lessThanMD ? 'max-w-[480px] !w-full bottom-0 border-r-0 !absolute' : ''}`}>
               {
                 openSidebar
                   ? (

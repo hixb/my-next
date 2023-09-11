@@ -6,15 +6,17 @@ import { useRouter } from 'next/navigation'
 import { UseSidebar } from '@/app/context/useSidebar'
 import { useScreen } from '@/app/utils/useScreen'
 import { useIcon } from '@/app/utils/useIcons'
+import { useAuthor } from '@/app/context/useAuthor'
 import SvgIcon from '@/app/components/general/SvgIcon'
 import ChangeTheme from '@/app/components/style/ChangeTheme'
-import header from '@/app/styles/components/header.module.scss'
+import style from '@/app/styles/components/header.module.scss'
 
 export default function Header() {
   const router = useRouter()
   const icon = useIcon()
   const { setSidebar } = React.useContext(UseSidebar)
   const { lessThanMD, screenWidth, ScreenSize } = useScreen()
+  const { websiteTitle } = useAuthor()
 
   const [showSearchLayer, setShowSearchLayer] = React.useState(false)
 
@@ -36,17 +38,17 @@ export default function Header() {
   }
 
   return (
-    <header className={header.header_wrap}>
+    <header className={style.header_wrap}>
       <div className={'w-56 flex items-center max-md:w-auto max-md:min-w-40'}>
         <SvgIcon icon={() => icon.essetional.line()} onClick={toggleSidebar}></SvgIcon>
         <h1 className={'ml-1 text-lg'}>
-          <Link href={'/'} rel={'canonical'} title={'HELLO'}>
-            HELLO
+          <Link className={style.website_title} href={'/'} rel={'canonical'} title={'HELLO'}>
+            {websiteTitle}
           </Link>
         </h1>
       </div>
       <div className={'flex-1 flex items-center justify-between'}>
-        <div className={header.search}>
+        <div className={style.search}>
           <SvgIcon icon={icon.search.search}></SvgIcon>
           <input className={'h-10 flex-1 text-sm'} type="text" placeholder="搜索..." />
         </div>
@@ -77,17 +79,17 @@ export default function Header() {
             className={'max-md:opacity-100 max-md:visible opacity-0 invisible blur-backdrop'}
             onClick={() => setShowSearchLayer(!showSearchLayer)}
           >
-            <div className={header.input_box}>
+            <div className={style.input_box}>
               <SvgIcon icon={icon.search.search} />
               <input className={'w-full h-16 pl-2 text-xs font-thin'} type="text" placeholder="搜索..." />
             </div>
           </div>
         )
       }
-      <div className={header.footer_menu}>
+      <div className={style.footer_menu}>
         {
           footerMenuList.map(item => (
-            <div className={header.footer_menu_list} key={item.identify}>
+            <div className={style.footer_menu_list} key={item.identify}>
               <SvgIcon onClick={() => item.go()} icon={item.icon}></SvgIcon>
             </div>
           ))

@@ -4,7 +4,7 @@ import { isFunction } from '@/app/utils/useChecks'
 import svgIcon from '@/app/styles/components/svgIcon.module.scss'
 
 interface Props extends EvtAttributes {
-  icon: () => JSX.Element
+  icon: () => React.JSX.Element
   borderRadius?: string
   isOpenHover?: boolean
   filled?: boolean
@@ -13,7 +13,7 @@ interface Props extends EvtAttributes {
   size?: number
   disabled?: boolean
   overallSize?: number
-  children?: JSX.Element
+  children?: React.JSX.Element
 }
 
 export default function SvgIcon(props: Props) {
@@ -27,14 +27,6 @@ export default function SvgIcon(props: Props) {
   } = props
 
   const useFirstIconRef = React.createRef<HTMLElement>()
-
-  // React.useEffect(() => {
-  //   if (useFirstIconRef && props.size) {
-  //     const svgEl = useFirstIconRef.current?.getElementsByTagName('svg')
-  //     if (svgEl)
-  //       svgEl[0].setAttribute('style', `width: ${props.size}px; height: ${props.size}px;`)
-  //   }
-  // }, [useFirstIconRef, props.size])
 
   return (
     <i
