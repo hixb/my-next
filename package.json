@@ -23,7 +23,7 @@
     "@antfu/eslint-config": "^0.43.0",
     "@types/node": "20.7.1",
     "@types/react": "18.2.22",
-    "@types/react-dom": "18.2.7",
+    "@types/react-dom": "18.2.8",
     "autoprefixer": "10.4.16",
     "eslint": "8.50.0",
     "eslint-plugin-react": "^7.33.2",
