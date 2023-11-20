@@ -20,7 +20,7 @@
     "react-use": "^17.4.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^1.0.0",
+    "@antfu/eslint-config": "^2.0.0",
     "@types/node": "20.9.1",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.15",
